@@ -35,7 +35,7 @@ paginate: 20
 #### Site
 title : Jekyll Jacman
 tagline: A fresh looking and responsive theme for Jekyll
-assets: /assets
+assets: #/assets
 baseurl: 
 
 #### Language
