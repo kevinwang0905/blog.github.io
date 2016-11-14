@@ -1,18 +1,22 @@
+reading_label: 正在查看 %s 下的文章
+blog: 博客
+albums: 相册
 categories: 分类
-search: 搜索
 tags: 标签
-tagcloud: 标签云
-prev: 上一页
+archive: 归档
+links: 链接
+about: 关于
+recent: 最新文章
 next: 下一页
-comment: 文章评论
+previous: 上一页
+notitle: 无题
+blogroll: 友情链接
+history: 历史
+rss: 订阅
+guestbook: 留言
+home: 首页
+recent_comments: 最近评论
+Readmore: 阅读更多
+belongsto: 分类于
 contents: 文章目录
-archive_a: 归档
-archive_b: 归档：%s
-page: 第 %d 页
-recent_posts: 近期文章
-menu: 菜单
-links: 友情链接
-rss: RSS 订阅
-showsidebar: 显示侧边栏
-hidesidebar: 隐藏侧边栏
-updated: 更新日期
+shareto: 分享到

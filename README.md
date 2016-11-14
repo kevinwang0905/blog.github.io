@@ -1,124 +1,194 @@
-# Pacman
+# Maupassant
 
-Pacman is a flat and responsive design theme for [Hexo](http://hexo.io).
+[![Build Status](https://travis-ci.org/tufu9441/maupassant-hexo.svg?branch=master)](https://travis-ci.org/tufu9441/maupassant-hexo)   [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/tufu9441/maupassant-hexo/blob/master/LICENSE)
 
-[Demo](http://A-limon.github.io/pacman) || [Alimon's Blog](http://yangjian.me)
+> 大道至简
 
-中文说明请访问[这里](http://A-limon.github.io/pacman/hello/introducing-pacman-theme/)
-##Installation
-###Install
-```
-$ git clone https://github.com/A-limon/pacman.git themes/pacman
-```
-**Pacman requires Hexo 2.4.5 and above.** 
-###Enable
-Modify `theme` setting in blog folder` _config.yml` to `pacman`.
-###Update
-```
-cd themes/pacman
-git pull
-```
-**please backup your `_config.yml` file before update.** 
-##Configuration
+[Preview](https://www.haomwei.com)｜[中文文档](https://www.haomwei.com/technology/maupassant-hexo.html)
 
-Modify settings in  `/themes/pacman/_config.yml`.
+A simple Hexo template with great performance on different devices, ported from a Typecho theme by [Cho](https://github.com/pagecho/maupassant/), forked and modified from [icylogic](https://github.com/icylogic/maupassant-hexo/).
 
+![template preview](http://ooo.0o0.ooo/2015/10/24/562b5be12177e.jpg
+ "Maupassant template preview")
+
+## Installation
+Install theme and renderers:
+
+```shell
+$ git clone https://github.com/tufu9441/maupassant-hexo.git themes/maupassant
+$ npm install hexo-renderer-jade --save
+$ npm install hexo-renderer-sass --save
 ```
-##### Menu
+
+Then change your `theme` setting in `_config.yml` to `maupassant`.
+
+## Configuration
+Default config:
+
+```YAML
+fancybox: true ## If you want to use fancybox please set the value to true.
+duoshuo: ## Your duoshuo_shortname, e.g. username
+disqus: ## Your disqus_shortname, e.g. username
+google_search: true ## Use Google search, true/false.
+baidu_search: ## Use Baidu search, true/false.
+swiftype: ## Your swiftype_key, e.g. m7b11ZrsT8Me7gzApciT
+tinysou: ## Your tinysou_key, e.g. 4ac092ad8d749fdc6293
+self_search: ## Use a jQuery-based local search engine, true/false.
+google_analytics: ## Your Google Analytics tracking id, e.g. UA-42425684-2
+baidu_analytics: ## Your Baidu Analytics tracking id, e.g. 8006843039519956000
+show_category_count: false ## If you want to show the count of categories in the sidebar widget please set the value to true.
+shareto: true ## If you want to use the share button please set the value to true.
+busuanzi: true ## If you want to use Busuanzi page views please set the value to true.
+widgets_on_small_screens: false ## Set to true to enable widgets on small screens.
+
 menu:
-  Home: /
-  Archives: /archives
-## you can create `tags` and `categories` folders in `../source`.
-## And create a `index.md` file in each of them.
-## set `front-matter`as
-## layout: tags (or categories)
-## title: tags (or categories)
-## ---
+  - page: home
+    directory: .
+    icon: fa-home
+  - page: archive
+    directory: archives/
+    icon: fa-archive
+  - page: about
+    directory: about/
+    icon: fa-user
+  - page: rss
+    directory: atom.xml
+    icon: fa-rss
 
-#### Widgets
-widgets: 
-- category
-- tag
-- rss
-## provide six widgets:category,tag,rss,archive,tagcloud,links.
-## modify links in `/layout/_widget/links.ejs`.
+widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts, rencent_comments and links.
+  - search
+  - category
+  - tag
+  - recent_posts
+  - recent_comments
+  - links
 
-#### RSS
-rss: ## RSS address.
+links:
+  - title: site-name1
+    url: http://www.example1.com/
+  - title: site-name2
+    url: http://www.example2.com/
+  - title: site-name3
+    url: http://www.example3.com/
 
-#### Image
-imglogo:
-  enable: true             ## display image logo true/false.
-  src: img/logo.svg        ## `.svg` and `.png` are recommended,please put image into the theme folder `/pacman/source/img`.
-favicon: img/favicon.ico   ## size:16px*16px,`.ico` is recommended,please put image into the theme folder `/pacman/source/img`.     
-apple_icon: img/pacman.jpg ## size:64px*64px,please put image into the theme folder `/pacman/source/img`.
+timeline:
+  - num: 1
+    word: 2014/06/12-Start
+  - num: 2
+    word: 2014/11/29-XXX
+  - num: 3
+    word: 2015/02/18-DDD
+  - num: 4
+    word: More
 
-#### Author Avatar Picture
-author_img_enable: true ## display author avatar picture
-dataURI: false
-## if the picture's format is dataURI please set the value to true,otherwise set the value to false.
-## convert an image into base 64 data URIs http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/ .
-author_img_data: ''
-## paste the dataURI in ONE LINE and included it by ''.
-author_img: img/author.jpg ## size:220px*220px.
-## if the picture's format is `.png` or `.jpg`  instead of dataURI,you should set the `dataURI` value to false.
+# Static files
+js: js
+css: css
 
-#### Font
-ShowCustomFont: true  
-## you can change custom font in `variable.styl` and `font.styl` which in the theme folder `/pacman/source/css`.
+# Theme version
+version: 0.0.0
+```
+- fancybox - Enable [Fancybox](http://fancyapps.com/fancybox/)
+- duoshuo - [Duoshuo](http://duoshuo.com) shortname
+- disqus - [Disqus](https://disqus.com) shortname
+- google_search - Default search engine
+- baidu_search - Search engine for users in China
+- swiftype - [Swiftype Search](https://swiftype.com) key
+- tinysou - [Tiny Search](http://tinysou.com) key
+- self_search - A jQuery-based [local search engine](http://hahack.com/codes/local-search-engine-for-hexo), with the dependency on the plugin [hexo-generator-search](https://github.com/PaicHyperionDev/hexo-generator-search).
+- google_analytics - [Google Analytics](https://www.google.com/analytics/) tracking id
+- baidu_analytics - [Baidu Analytics](http://tongji.baidu.com) tracking id
+- show_category_count - Show the count of categories in the sidebar widget.
+- shareto - Enable share button
+- busuanzi - Enable [Busuanzi](http://busuanzi.ibruce.info) page views
+- widgets_on_small_screens - Show the widgets at the bottom of small screens.
+- menu - Customize your menu of pages here, just follow the format of existied items. Don't forget to create corresponding folders inlcuding `index.md` in `source` folder to ensure the pages will correctly display. [FontAwesome](http://fontawesome.io) icon fonts have been integrated, and you can choose other icons which you like [here](http://fontawesome.io/icons/) and use them according to the instruction.
+- widgets - Choose and arrange the widgets in sidebar here.
+- links - Edit your blogroll here.
+- timeline - Show a timeline of the website by setting `layout: timeline` of a page.
+- Static files - Static files directory, for convenience of CDN usage.
+- Theme version - For automatic refresh of static files on CDN.
 
-#### Toc
-toc:
-  article: true   ## show contents in article.
-  aside: true     ## show contents in aside.
-## you can set both of the value to true of neither of them.
-## if you don't want display contents in a specified post,you can modify `front-matter` and add `toc: false`.
+## Features
+#### Logo
+You can set a **favicon.ico** for your website, please put it into  `source` folder of hexo directory, recommended size: 32px*32px.
 
-#### Fancybox
-fancybox: false 
-## if you use gallery post or want use fancybox please set the value to true.
-## if you want use fancybox in ANY post please copy the file `fancybox.js`.
-## in theme folder `/pacman/scripts` to your hexo blog folder `../scritps`.
+You can add a website logo for apple devices, please put an image named **apple-touch-icon.png** into `source` folder of hexo directory, recommended size: 114px*114px.
 
-#### Author information
-author:
-  google_plus:    ## eg:116338260303228776998 for https://plus.google.com/u/0/116338260303228776998
-  intro_line1: "" ## eg: "Hello ,I'm Larry Page in Google."
-  intro_line2: "" ## eg: "This is my blog,believe it or not."
-  weibo:      ## e.g. 436062867 for http://weibo.com/436062867
-  twitter:    ## e.g. yangjiansky for https://twitter.com/yangjiansky
-  github:     ## e.g. A-limon for https://github.com/A-limon
-  facebook:   ## e.g. yangjian for https://favebook.com/yangjian
-  tsina:      ## e.g. 1664838973  Your weibo ID,It will be used in share button.
+#### Abstract
+You can control the abstract of a post shown at index, by either filling a `description:` item in `front-matter` of the `post.md`, or just inserting a `<!--more-->` before your hidden content.
 
-#### Comment
-duoshuo: 
-  enable: false  ## duoshuo.com
-  short_name:    ## duoshuo short name.
+#### Page
+Create folders inlcuding `index.md` in `source` folder to add pages, and add a `layout: page` in `front-matter` of `index.md`. If you need a single column page without sidebar, just set `layout: single-column` instead of `layout: page`.
 
-#### Share button
-jiathis:
-  enable: false ## if you use jiathis as your share tool,the built-in share tool won't be display.
-  id:    ## e.g. 1501277 your jiathis ID. 
-  tsina: ## e.g. 1664838973 Your weibo id,It will be used in share button.
+#### Table of Contents
+TOC in a post can be enabled by adding a `toc: true` item in `front-matter`.
 
-#### Analytics
-google_analytics:
-  enable: false
-  id:   ## e.g. UA-1766729-8 your google analytics ID.
-  site: ## e.g. yangjian.me your google analytics site or set the value as auto.
-## You MUST upgrade to Universal Analytics first!
-## https://developers.google.com/analytics/devguides/collection/upgrade/?hl=zh_CN
+#### Comments
+Comment feature of each post and page can be enabled (default) and disabled by adding a `comments: true` or a `comments: false` in `front-matter`. This could be useful when you want comment feature for a guestbook page, but don't want comment feature for a about page.
 
-#### Custom Search
-google_cse: 
-  enable: false
-  cx:  ## e.g. 000561263943549425496:mrzrm0gr4kg your Custom Search ID.
-## https://www.google.com/cse/
+#### Syntax Highlighting
+Highlighted code showcase is supported, please set the `highlight` option in `_config.yml` of hexo directory like this:
+
+```YAML
+highlight:
+  enable: true
+  auto_detect: true
+  line_number: true
+  tab_replace:
 ```
 
+#### Math Equation
+Add
+```YAML
+mathjax: true
+```
+in Hexo's `_config.yml`.
 
+In the post which you would like to use math equation, add `mathjax: true` in the `front-matter`. For example:
 
+```YAML
+title: Test Math
+date: 2016-04-05 14:16:00
+categories: math
+mathjax: true
+---
+```
+The default math delimiters are `$$...$$` and `\\[...\\]` for displayed mathematics,
+and `$...$` and `\\(...\\)` for in-line mathematics.
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/A-limon/pacman/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+However, if your post contains dollar signs (`$`), and they appear often in non-mathematical parts, in other words, you want to use `$` as dollar sign not inline math delimiter, please add
 
+```YAML
+mathjax2: true
+```
+in Hexo's `_config.yml` instead of `mathjax: true`. Correspondingly, add `mathjax2: true` to the `front-matter` of the post in which
+you would like to use math equation.
+
+See the [example](http://zhongpu.info/2016/05/06/Mathjax%20and%20Hexo/).
+
+#### Languages
+Seven languages are available for this theme currently: Simplified Chinese (zh-CN), Traditional Chinese (zh-TW), English (en), French (fr-FR), German (de-DE), Korean (ko) and Spanish (es-ES). Contributions of translating to other languages will be highly appreciated.
+
+## Solutions
+- Check whether your Terminal's current directory is in hexo's root directory which contains `source/`, `themes/`, etc.
+
+- If you have any trouble in using this theme, please feel free to open an [issue](https://github.com/tufu9441/maupassant-hexo/issues).
+
+## Browser Support
+![Imgur](http://i.imgur.com/iO9L5ty.png)
+
+## Contributing
+All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
+
+Looking forward to your pull request.
+
+## Acknowledgements
+Thank [JamesPan](http://blog.jamespan.me) for his help to improve this theme
+.
+## Maupassant on other platforms:
++ Typecho：https://github.com/pagecho/maupassant/
++ Octopress：https://github.com/pagecho/mewpassant/
++ Farbox：https://github.com/pagecho/Maupassant-farbox/
++ Wordpress：https://github.com/iMuFeng/maupassant/
++ Ghost: https://github.com/LjxPrime/maupassant/
